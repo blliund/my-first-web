@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>오현빈 | 일상을 풍성하게 만드는 사람</title>
+  <meta name="description" content="오현빈의 자기소개 페이지입니다. 지금은 삼겹살에 비빔면이 간절하고, 음악과 사진, 달리기와 시집을 사랑합니다.">
+  
+  <!-- Pretendard Font -->
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- 상단 네비게이션 -->
+  <header class="header">
+    <div class="nav-container">
+      <div class="logo">
+        <span class="logo-badge">HB</span>
+        <span class="logo-text">오현빈</span>
+      </div>
+      <div class="nav-actions">
+        <button id="themeToggleBtn" class="icon-btn" aria-label="테마 전환" title="테마 전환">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+        <button id="quickSendBtn" class="pill-btn primary">
+          <span>고기 사주기</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- 메인 컨테이너 -->
+  <main class="main-container">
+    
+    <!-- 인트로 섹션 -->
+    <section class="hero-section">
+      <div class="status-pill">
+        <span class="pulse-dot"></span>
+        <span>실시간 상태 : 배고픔 단계 진입</span>
+      </div>
+      <h1 class="hero-title">
+        안녕하세요,<br>
+        <span class="text-gradient">오현빈</span>입니다.
+      </h1>
+      <p class="hero-subtitle">
+        좋아하는 음악을 듣고, 순간을 사진에 담고, 기타를 튕기며,<br class="pc-only">
+        바람을 가르며 달리고 가끔은 시집 한 줄에 머무는 다채로운 일상을 살고 있어요.
+      </p>
+    </section>
+
+    <!-- 긴급 속보 카드 (토스 스타일 위트 카드) -->
+    <section class="urgent-card-wrapper">
+      <div class="urgent-card" id="foodCard">
+        <div class="urgent-tag">
+          <i class="fa-solid fa-fire-flame-curved"></i>
+          <span>지금 가장 중요한 소식</span>
+        </div>
+        <div class="urgent-content">
+          <div class="urgent-text">
+            <h2>지금 너무 배고파요.<br><strong>삼겹살에 비빔면</strong>이 절실합니다</h2>
+            <p>바삭하게 구운 삼겹살과 매콤새콤 시원한 비빔면의 조합은 참을 수 없죠.</p>
+          </div>
+          <div class="urgent-gauge-box">
+            <div class="gauge-labels">
+              <span>갈망 지수</span>
+              <strong id="hungerValue">87.6%</strong>
+            </div>
+            <div class="gauge-bar-bg">
+              <div class="gauge-bar-fill" id="gaugeBarFill" style="width: 87.6%;"></div>
+            </div>
+          </div>
+        </div>
+        <div class="urgent-footer">
+          <button id="cheerBtn" class="urgent-action-btn">
+            <i class="fa-solid fa-heart"></i>
+            <span>삼겹살 응원하기 <b id="cheerCount">128</b></span>
+          </button>
+          <button id="openTreatModalBtn" class="urgent-sub-btn">
+            <span>가상으로 한 턱 쏘기</span>
+            <i class="fa-solid fa-chevron-right"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 프로필 요약 카드 그리드 -->
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">오현빈의 일상 데이터</h2>
+        <span class="section-sub">토스처럼 명쾌하게 정리했어요</span>
+      </div>
+
+      <div class="stat-grid">
+        <div class="stat-card">
+          <span class="stat-label">현재 행복 지수</span>
+          <div class="stat-value text-blue">고기 먹으면 100%</div>
+          <div class="stat-desc">지금은 약간 꼬르륵 상태</div>
+        </div>
+        <div class="stat-card">
+          <span class="stat-label">보유 취미 개수</span>
+          <div class="stat-value">6+ 종목</div>
+          <div class="stat-desc">음악부터 러닝까지 골고루</div>
+        </div>
+        <div class="stat-card">
+          <span class="stat-label">오늘의 BGM</span>
+          <div class="stat-value text-purple" style="font-size: 1.15rem;">검정치마 - Antifreeze</div>
+          <div class="stat-desc">“우린 오래전부터 어쩔 수 없는 거였어”</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 취미 및 라이프스타일 탭/카드 섹션 -->
+    <section class="section">
+      <div class="section-header with-chips">
+        <div>
+          <h2 class="section-title">다채로운 취미 라이프</h2>
+          <p class="section-sub">무엇을 할 때 가장 에너지가 넘치는지 모아봤어요</p>
+        </div>
+        <!-- 카테고리 필터 칩 -->
+        <div class="chip-group" id="filterChips">
+          <button class="chip active" data-filter="all">전체</button>
+          <button class="chip" data-filter="music">음악 & 감성</button>
+          <button class="chip" data-filter="active">액티비티</button>
+          <button class="chip" data-filter="leisure">여유 & 힐링</button>
+        </div>
+      </div>
+
+      <div class="hobbies-grid" id="hobbiesContainer">
+        <!-- 음악 듣기 -->
+        <div class="hobby-card" data-category="music">
+          <div class="hobby-icon-wrap bg-blue-light">
+            <i class="fa-solid fa-headphones text-blue"></i>
+          </div>
+          <div class="hobby-body">
+            <span class="hobby-category">DAILY BGM</span>
+            <h3 class="hobby-title">노래 듣기</h3>
+            <p class="hobby-text">
+              언제 어디서든 귀에 이어폰을 꽂고 있어요. 밴드 음악부터 잔잔한 인디, 팝송까지 장르 불문 음악이 주는 온도를 사랑합니다.
+            </p>
+            <div class="hobby-tag-list">
+              <span class="tag">#하루종일음악</span>
+              <span class="tag">#플레이리스트수집</span>
+            </div>
+          </div>
+          <!-- 애플뮤직 연결 카드 -->
+          <a href="https://music.apple.com/kr/song/hype-boy/1635469851" target="_blank" rel="noopener noreferrer" class="music-link-card" id="musicCardPlayBtn">
+            <div class="music-link-btn apple-music">
+              <i class="fa-brands fa-apple"></i>
+            </div>
+            <div class="music-link-info">
+              <span class="track-title">추천하는 노래 듣기 🎧</span>
+              <span class="track-artist">NewJeans - Hype Boy • 애플뮤직</span>
+            </div>
+          </a>
+        </div>
+
+        <!-- 기타 치기 -->
+        <div class="hobby-card" data-category="music">
+          <div class="hobby-icon-wrap bg-amber-light">
+            <i class="fa-solid fa-guitar text-amber"></i>
+          </div>
+          <div class="hobby-body">
+            <span class="hobby-category">INSTRUMENT</span>
+            <h3 class="hobby-title">기타 치기</h3>
+            <p class="hobby-text">
+              손끝에 닿는 줄의 울림이 참 좋아요. 코드 하나하나 짚어가며 내가 좋아하는 곡을 직접 연주할 때 오는 쾌감이 있습니다.
+            </p>
+            <div class="hobby-tag-list">
+              <span class="tag">#어쿠스틱</span>
+              <span class="tag">#코드연습</span>
+              <span class="tag">#스트로크</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 사진 찍기 -->
+        <div class="hobby-card" data-category="leisure">
+          <div class="hobby-icon-wrap bg-teal-light">
+            <i class="fa-solid fa-camera text-teal"></i>
+          </div>
+          <div class="hobby-body">
+            <span class="hobby-category">MOMENTS</span>
+            <h3 class="hobby-title">사진 찍기</h3>
+            <p class="hobby-text">
+              스쳐 지나가기 쉬운 일상의 예쁜 빛, 그림자, 풍경들을 찰칵 기록해요. 나중에 꺼내 볼 때마다 그날의 감정이 생생히 살아납니다.
+            </p>
+            <div class="hobby-tag-list">
+              <span class="tag">#일상기록</span>
+              <span class="tag">#빛과그림자</span>
+              <span class="tag">#포토스팟</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 달리기 & 자전거 타기 -->
+        <div class="hobby-card" data-category="active">
+          <div class="hobby-icon-wrap bg-green-light">
+            <i class="fa-solid fa-person-running text-green"></i>
+          </div>
+          <div class="hobby-body">
+            <span class="hobby-category">OUTDOOR</span>
+            <h3 class="hobby-title">달리기 & 자전거 타기</h3>
+            <p class="hobby-text">
+              답답할 땐 운동화를 신고 나가거나 페달을 밟아요. 시원한 맞바람을 맞으며 땀을 흘리고 나면 복잡했던 생각들이 싹 비워집니다.
+            </p>
+            <div class="hobby-tag-list">
+              <span class="tag">#러닝</span>
+              <span class="tag">#한강라이딩</span>
+              <span class="tag">#체력충전</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 게임 -->
+        <div class="hobby-card" data-category="leisure">
+          <div class="hobby-icon-wrap bg-purple-light">
+            <i class="fa-solid fa-gamepad text-purple"></i>
+          </div>
+          <div class="hobby-body">
+            <span class="hobby-category">PLAY & FUN</span>
+            <h3 class="hobby-title">게임 즐기기</h3>
+            <p class="hobby-text">
+              친구들과 보이스 켜고 웃고 떠들며 즐기거나, 탄탄한 스토리를 가진 게임 세계관에 푹 빠져드는 것도 좋아하는 휴식법이에요.
+            </p>
+            <div class="hobby-tag-list">
+              <span class="tag">#팀플레이</span>
+              <span class="tag">#스트레스해소</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 시집 읽기 -->
+        <div class="hobby-card" data-category="leisure">
+          <div class="hobby-icon-wrap bg-rose-light">
+            <i class="fa-solid fa-book-open text-rose"></i>
+          </div>
+          <div class="hobby-body">
+            <span class="hobby-category">LITERATURE</span>
+            <h3 class="hobby-title">시집 읽기</h3>
+            <p class="hobby-text">
+              바쁜 하루 속에서 몇 줄의 짧고 깊은 시를 읽을 때 마음이 편안해집니다. 단어 하나가 전하는 울림을 곱씹는 시간을 좋아해요.
+            </p>
+            <div class="hobby-tag-list">
+              <span class="tag">#마음챙김</span>
+              <span class="tag">#감성한스푼</span>
+              <span class="tag">#시구절</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- 토스 스타일 하단 CTA 섹션 -->
+    <section class="bottom-cta-banner">
+      <div class="cta-inner">
+        <div class="cta-emoji">🥓 🍜</div>
+        <h2>오현빈 님과 함께 맛있는 이야기 나눠볼까요?</h2>
+        <p>삼겹살 맛집 추천이나 좋은 노래 공유는 언제나 환영입니다.</p>
+        <div class="cta-buttons">
+          <a id="sendGreetingsBtn" href="https://www.instagram.com/blliund" target="_blank" rel="noopener noreferrer" class="pill-btn primary large">
+            <i class="fa-brands fa-instagram"></i>
+            <span>인사 건네기</span>
+          </a>
+          <button id="copyUrlBtn" class="pill-btn secondary large">
+            <i class="fa-regular fa-copy"></i>
+            <span>프로필 공유하기</span>
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 가상 삼겹살 펀딩 모달 (토스 송금 인터페이스 오마주) -->
+  <div class="toss-modal-overlay" id="treatModal" aria-hidden="true">
+    <div class="toss-modal-box">
+      <div class="modal-header">
+        <span class="modal-subtitle">토스 스타일 가상 송금</span>
+        <button class="modal-close-btn" id="closeModalBtn">&times;</button>
+      </div>
+      
+      <div class="modal-body" id="modalStep1">
+        <div class="toss-avatar-wrap">
+          <div class="avatar-circle">🥓</div>
+          <div class="recipient-info">
+            <span class="recipient-name">오현빈 님에게</span>
+            <span class="recipient-sub">삼겹살 & 비빔면 지원금 보내기</span>
+          </div>
+        </div>
+
+        <div class="amount-selector">
+          <button class="amount-option active" data-amount="15000">비빔면 세트 (1.5만)</button>
+          <button class="amount-option" data-amount="35000">삼겹살 2인분 (3.5만)</button>
+          <button class="amount-option" data-amount="50000">삼겹살+비빔면 풀코스 (5만)</button>
+        </div>
+
+        <div class="amount-display">
+          <span class="amount-num" id="selectedAmountDisplay">15,000</span>
+          <span class="amount-unit">원</span>
+        </div>
+
+        <div class="modal-notice">
+          <i class="fa-solid fa-circle-info"></i>
+          <span>실제 돈이 나가지 않는 가상의 응원 시뮬레이션입니다 :)</span>
+        </div>
+
+        <button id="confirmSendBtn" class="pill-btn primary full-width">
+          보내기
+        </button>
+      </div>
+
+      <!-- 송금 성공 화면 (금액별 맞춤 연출) -->
+      <div class="modal-body hidden text-center" id="modalStep2">
+        <div id="celebrationBadge" class="celebration-badge"></div>
+        <div class="success-animation">
+          <div class="check-circle" id="successIcon">
+            <i class="fa-solid fa-check"></i>
+          </div>
+        </div>
+        <h3 class="success-title" id="successTitle"></h3>
+        <p class="success-desc" id="successDesc"></p>
+        <button id="modalDoneBtn" class="pill-btn primary full-width">
+          확인
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 토스트 알림 메시지 -->
+  <div class="toast-message" id="toastMessage">
+    <i class="fa-solid fa-circle-check"></i>
+    <span id="toastText">링크가 복사되었습니다!</span>
+  </div>
+
+  <!-- 푸터 -->
+  <footer class="footer">
+    <div class="footer-container">
+      <p class="footer-copy">© 2026 OH HYUNBIN. All Rights Reserved.</p>
+      <p class="footer-sub">Designed with Toss Aesthetic • Clean & Minimal</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
